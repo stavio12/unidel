@@ -9,7 +9,7 @@
       {{ getLocation.location.lon }}
     </div>
     <div class="text-4xl">
-      You're current address is:
+      You current address is:
 
       {{ getLocation?.address.formatted_address }}
     </div>
