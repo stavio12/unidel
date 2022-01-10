@@ -16,14 +16,16 @@ const getAddress = async (latitude, longitude) => {
 
     let address;
   console.log((latitude, longitude))
+  // 5.597126798603674, -0.22305962851579997 GTUC
+  // 5.650732791844352, -0.19543079805337787 legon
   await axios
     .post(
       "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
-        "5.5502" +
+        "5.597126" +
         "," +
-        "-0.2174" +
+        "-0.22305" +
         "&key=" +
-        "AIzaSyBz1gdUawWEWmItKcNVDK8qQ5OYm9FUGag"
+        process.env.VUE_APP_GEO_LOCATION_API
     )
     .then(async(response) => {
          address = await response.data
@@ -34,7 +36,7 @@ const getAddress = async (latitude, longitude) => {
       console.log(err);
     });
         console.log(address.results)
-    return address.results[0]
+    return address.results[1]
 
    
 };
